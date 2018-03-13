@@ -54,16 +54,12 @@ public class Deck {
 		int i = 0;
 		if(eNum instanceof eRank) {
 			while(cards.size()>0) {
-				if(Draw().geteRank() == eNum) {
-					i++;
-				}
+				if(Draw().geteRank() == eNum) i++;
 			}
 		}
 		else if(eNum instanceof eSuit) {
 			while(cards.size()>0) {
-				if(Draw().geteSuit() == eNum) {
-					i++;
-				}
+				if(Draw().geteSuit() == eNum) i++;
 			}
 		}
 		return i;
