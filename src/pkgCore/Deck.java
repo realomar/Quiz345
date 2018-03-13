@@ -1,9 +1,7 @@
 package pkgCore;
 import java.util.ArrayList;
 import java.util.Collections;
-
 import pkgEnum.*;
-
 public class Deck {
 
 	//	DONE: Add 'cards' attribute that is an ArrayList of Card
@@ -47,6 +45,28 @@ public class Deck {
 	// a size getter for testing
 	public int DeckSize() {
 		return this.cards.size();
+	}
+	
+	// THE PART IN QUIZ 3,4,5
+	public int getRemaining(Object eNum) throws Exception {
+		/* It already checks to make sure there are cards left but
+	 	I had to put the throws exception in there.*/
+		int i = 0;
+		if(eNum instanceof eRank) {
+			while(cards.size()>0) {
+				if(Draw().geteRank() == eNum) {
+					i++;
+				}
+			}
+		}
+		else if(eNum instanceof eSuit) {
+			while(cards.size()>0) {
+				if(Draw().geteSuit() == eNum) {
+					i++;
+				}
+			}
+		}
+		return i;
 	}
 	
 }
